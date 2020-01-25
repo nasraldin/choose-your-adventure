@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" Version="1.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ChooseYourAdventure.SharedKernel\ChooseYourAdventure.SharedKernel.csproj" />
   </ItemGroup>
 
