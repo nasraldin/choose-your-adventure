@@ -9,7 +9,7 @@ namespace ChooseYourAdventure.Core.Entities
         /// Create new DecisionTree.
         /// </summary>
         /// <param name="treeNodes">TreeNodes for the DecisionTree.</param>
-        public DecisionTree(int[] treeNodes)
+        public DecisionTree(string treeNodes)
         {
             TreeNodes = treeNodes;
         }
@@ -17,7 +17,12 @@ namespace ChooseYourAdventure.Core.Entities
         /// <summary>
         /// Get array of TreeNodes.
         /// </summary>
-        public int[] TreeNodes { get; }
+        public string TreeNodes { get; }
+
+        /// <summary>
+        /// suggested notes for this decision
+        /// </summary>
+        public string SuggestedNotes { get; set; }
 
         /// <summary>
         /// Mark DecisionTree of TreeNodes IsDone.
