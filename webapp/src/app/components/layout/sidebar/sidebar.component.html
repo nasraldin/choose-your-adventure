@@ -1,0 +1,32 @@
+<div id="sidebar" class="site-list-home list-group mt-4 mb-4" role="menu">
+  <div class="card-header bg-menu">
+    <span class="sl-h-es">App</span>
+    <a href="#" class="off-sidebar">
+      <i class="fas fa-chevron-left" id="off-sidebar-icon"></i>
+    </a>
+  </div>
+  <a
+    class="list-group-item list-group-item-action"
+    data-toggle="list"
+    [routerLink]="['/']"
+    role="tab"
+    aria-controls="Home"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <i class="fas fa-th"></i>
+    <span class="list-item-text">Home</span>
+  </a>
+  <a
+    class="list-group-item list-group-item-action"
+    data-toggle="list"
+    [routerLink]="['/']"
+    role="tab"
+    aria-controls="about-task"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <i class="fas fa-question-circle"></i>
+    <span class="list-item-text">Test</span>
+  </a>
+</div>

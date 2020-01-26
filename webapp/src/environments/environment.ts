@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endpoint: {
+    decisionTree: '/api/decision-tree',
+    markComplete: '/api/mark-complete'
+  }
 };
 
 /*
