@@ -1,0 +1,16 @@
+{
+  "env": "dev",
+  "appTitle": "Choose Your Adventure",
+  "appVersion": "0.0.1",
+  "appDescription": "Simple web application which allows a player to choose their own path by picking  between two simple choices displayed on their screen in order to progress to the next set of  choices, until they get to one of the endings. and show the steps they took to get to the end of the game.",
+  "companyUrl": "https://lobsterink.com",
+  "appLogo": "../assets/images/lobster_logo.svg",
+  "author": {
+    "name": "Nasr Eldin Mohamed",
+    "title": "Software Engineer",
+    "email": "Full Stack Engineer",
+    "stackoverflow": "https://stackoverflow.com/story/nasraldin",
+    "linkedIn": "https://www.linkedin.com/in/nasreldin"
+  },
+  "tools": "Angular, Rxjs, Ngrx, express.js, bootstrap"
+}
