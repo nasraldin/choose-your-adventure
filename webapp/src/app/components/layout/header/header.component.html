@@ -1,6 +1,12 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav
+  class="navbar fixed-top navbar-expand-lg navbar-light bg-light d-flex flex-column shadow pt-3 pb-3"
+>
   <a class="navbar-brand" [routerLink]="['/']">
-    <i class="fa fa-home" aria-hidden="true"></i>
-    | App
+    <img
+      [src]="appConfig.appLogo"
+      width="135"
+      class="d-inline-block align-top"
+    />
+    | <span class="app-title"> {{ appConfig.appTitle }}</span>
   </a>
 </nav>

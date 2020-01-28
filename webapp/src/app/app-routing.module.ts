@@ -1,10 +1,12 @@
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { DecisionTreeComponent } from './components/decisionTree/index/index.component';
+import { DecisionWizardComponent } from './components/decisionTree/decision-wizard/decision-wizard.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: DecisionTreeComponent },
+  { path: 'choose-adventure', component: DecisionWizardComponent }
 ];
 
 @NgModule({
