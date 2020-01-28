@@ -1,7 +1,3 @@
-body {
-  background-color: #f9f9f9;
-}
-
 .bg-navbar {
   background-color: #fff;
   .nav-link {
@@ -22,6 +18,11 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   border-bottom: unset;
+}
+
+.btn-primary {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
 }
 
 .site-list-home {
@@ -45,7 +46,7 @@ body {
 }
 
 .main-site {
-  margin-top: 46px;
+  margin-top: 85px;
 }
 
 .warp-site {

@@ -7,6 +7,8 @@ import { AppErrorHandler } from './app-error.handler';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { DecisionTreeComponent } from './components/decisionTree/index/index.component';
+import { DecisionWizardComponent } from './components/decisionTree/decision-wizard/decision-wizard.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
@@ -16,6 +18,8 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
     AppComponent,
     HeaderComponent,
     SidebarComponent,
+    DecisionTreeComponent,
+    DecisionWizardComponent
   ],
   imports: [
     BrowserModule,
