@@ -3,7 +3,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Commands.TreeNodes.CreateTreeNode
+namespace ChooseYourAdventure.Core.Commands.TreeNodes.CreateTreeNode
 {
     public partial class CreateTreeNodeCommand : IRequest<int>
     {
@@ -23,7 +23,7 @@ namespace ChooseYourAdventure.Commands.TreeNodes.CreateTreeNode
 
             public async Task<int> Handle(CreateTreeNodeCommand request, CancellationToken cancellationToken)
             {
-                var entity = new Core.Entities.TreeNode
+                var entity = new Entities.TreeNode
                 {
                     Question = request.Question,
                     ParentId = request.ParentId,

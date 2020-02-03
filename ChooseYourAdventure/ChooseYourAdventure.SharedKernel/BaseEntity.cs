@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChooseYourAdventure.SharedKernel
 {
@@ -11,6 +12,7 @@ namespace ChooseYourAdventure.SharedKernel
         /// <summary>
         /// Unique identifier for this entity.
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         public List<BaseDomainEvent> Events = new List<BaseDomainEvent>();

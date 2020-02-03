@@ -3,7 +3,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Commands.Categories.CreateCategory
+namespace ChooseYourAdventure.Core.Commands.Categories.CreateCategory
 {
     public partial class CreateCategoryCommand : IRequest<int>
     {

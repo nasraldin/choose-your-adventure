@@ -1,7 +1,6 @@
-﻿using CleanArchitecture.Application.DecisionTree.Queries.GetDecisionTree;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
 {
     public class DecisionTreeVm
     {

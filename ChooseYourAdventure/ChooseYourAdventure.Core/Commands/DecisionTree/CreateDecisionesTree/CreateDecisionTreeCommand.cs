@@ -3,7 +3,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Commands.DecisionTrees.CreateDecisionTree
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.CreateDecisionesTree
 {
     public partial class CreateDecisionTreeCommand : IRequest<int>
     {
@@ -21,7 +21,7 @@ namespace ChooseYourAdventure.Commands.DecisionTrees.CreateDecisionTree
 
             public async Task<int> Handle(CreateDecisionTreeCommand request, CancellationToken cancellationToken)
             {
-                var entity = new Core.Entities.DecisionTree(request.TreeNodes)
+                var entity = new Entities.DecisionTree(request.TreeNodes)
                 {
                     SuggestedNotes = request.SuggestedNotes
                 };

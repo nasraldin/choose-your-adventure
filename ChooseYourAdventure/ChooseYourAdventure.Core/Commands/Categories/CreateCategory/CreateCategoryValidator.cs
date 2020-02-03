@@ -1,11 +1,10 @@
-﻿using ChooseYourAdventure.Commands.Categories.CreateCategory;
-using ChooseYourAdventure.Core.Common.Interfaces;
+﻿using ChooseYourAdventure.Core.Common.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Commands.Category.CreateCategory
+namespace ChooseYourAdventure.Core.Commands.Categories.CreateCategory
 {
     public class CreateCategoryValidator : AbstractValidator<CreateCategoryCommand>
     {

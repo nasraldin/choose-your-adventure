@@ -2,7 +2,7 @@
 using ChooseYourAdventure.Core.Entities;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.Application.DecisionTree.Queries.GetDecisionTree
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
 {
     public class CategoryDto : IMapFrom<Category>
     {
