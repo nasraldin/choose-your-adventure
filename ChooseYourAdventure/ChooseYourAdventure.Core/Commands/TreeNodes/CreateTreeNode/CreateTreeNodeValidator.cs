@@ -1,11 +1,10 @@
-﻿using ChooseYourAdventure.Commands.TreeNodes.CreateTreeNode;
-using ChooseYourAdventure.Core.Common.Interfaces;
+﻿using ChooseYourAdventure.Core.Common.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Commands.TreeNode.CreateTreeNode
+namespace ChooseYourAdventure.Core.Commands.TreeNodes.CreateTreeNode
 {
     public class CreateTreeNodeValidator : AbstractValidator<CreateTreeNodeCommand>
     {

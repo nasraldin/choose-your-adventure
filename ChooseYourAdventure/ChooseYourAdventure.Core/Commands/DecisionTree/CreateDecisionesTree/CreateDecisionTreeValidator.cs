@@ -1,7 +1,6 @@
-﻿using ChooseYourAdventure.Commands.DecisionTrees.CreateDecisionTree;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace ChooseYourAdventure.Commands.DecisionTree.CreateDecisionTree
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.CreateDecisionesTree
 {
     public class CreateDecisionTreeValidator : AbstractValidator<CreateDecisionTreeCommand>
     {

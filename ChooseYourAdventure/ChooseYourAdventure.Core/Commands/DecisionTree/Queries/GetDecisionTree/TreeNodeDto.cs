@@ -2,7 +2,7 @@
 using ChooseYourAdventure.Core.Common.Mappings;
 using ChooseYourAdventure.Core.Entities;
 
-namespace CleanArchitecture.Application.DecisionTree.Queries.GetDecisionTree
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
 {
     public class TreeNodeDto : IMapFrom<TreeNode>
     {
@@ -17,7 +17,7 @@ namespace CleanArchitecture.Application.DecisionTree.Queries.GetDecisionTree
         public void Mapping(Profile profile)
         {
             profile.CreateMap<TreeNode, TreeNodeDto>()
-                .ForMember(d => d.CategoryId, opt => opt.MapFrom(s => (int)s.CategoryId));
+                .ForMember(d => d.CategoryId, opt => opt.MapFrom(s => s.CategoryId));
         }
     }
 }
