@@ -78,10 +78,10 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
 
                 _context.TreeNodes.AddRange(treeNodes);
                 _logger.LogInformation("Seeding Tree Nodes Done!");
+                _logger.LogInformation("Seeding initial data completed");
             }
 
             await _context.SaveChangesAsync();
-            _logger.LogInformation("Seeding initial data completed");
         }
     }
 }

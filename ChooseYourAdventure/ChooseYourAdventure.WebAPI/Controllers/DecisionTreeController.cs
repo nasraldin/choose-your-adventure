@@ -10,13 +10,13 @@ namespace ChooseYourAdventure.WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<long>> Create(CreateCategoryCommand command)
         {
-            return await Mediator.Send(command);
+            return await Mediator.Send(command).ConfigureAwait(false);
         }
 
         [HttpGet]
         public async Task<ActionResult<CategoryDto>> Get()
         {
-            return await Mediator.Send(new GetDecisionTreeQuery());
+            return await Mediator.Send(new GetDecisionTreeQuery()).ConfigureAwait(false);
         }
     }
 }
