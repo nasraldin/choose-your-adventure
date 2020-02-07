@@ -12,12 +12,11 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        //private readonly IDomainEventDispatcher _dispatcher;
+        private readonly IDomainEventDispatcher _dispatcher;
 
-        // , IDomainEventDispatcher dispatcher
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IDomainEventDispatcher dispatcher) : base(options)
         {
-            //_dispatcher = dispatcher;
+            _dispatcher = dispatcher;
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -33,7 +32,6 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
             .WithMany(p => p.TreeNodes)
             .HasForeignKey(p => p.ParentId);
 
-
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
@@ -47,7 +45,7 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
             int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
             // ignore events if no dispatcher provided
-            //if (_dispatcher == null) return result;
+            if (_dispatcher == null) return result;
 
             // dispatch events only if save was successful
             var entitiesWithEvents = ChangeTracker.Entries<BaseEntity>()
@@ -61,7 +59,7 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
                 entity.Events.Clear();
                 foreach (var domainEvent in events)
                 {
-                    //await _dispatcher.Dispatch(domainEvent).ConfigureAwait(false);
+                    await _dispatcher.Dispatch(domainEvent).ConfigureAwait(false);
                 }
             }
 

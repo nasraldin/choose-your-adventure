@@ -5,21 +5,8 @@ namespace ChooseYourAdventure.Core.Entities
 {
     public class DecisionTree : BaseEntity
     {
-        public DecisionTree()
-        {
-        }
-
         /// <summary>
-        /// Create new DecisionTree.
-        /// </summary>
-        /// <param name="treeNodes">TreeNodes for the DecisionTree.</param>
-        public DecisionTree(string treeNodes)
-        {
-            TreeNodes = treeNodes;
-        }
-
-        /// <summary>
-        /// Get array of TreeNodes.
+        /// Array of TreeNode Ids.
         /// </summary>
         public string TreeNodes { get; set; }
 
@@ -27,6 +14,11 @@ namespace ChooseYourAdventure.Core.Entities
         /// suggested notes for this decision
         /// </summary>
         public string SuggestedNotes { get; set; }
+
+        /// <summary>
+        /// CategoryName for current decision
+        /// </summary>
+        public string CategoryName { get; set; }
 
         /// <summary>
         /// Mark DecisionTree of TreeNodes IsDone.
