@@ -4,7 +4,11 @@ namespace ChooseYourAdventure.UnitTests
 {
     public class DecisionTreeBuilder
     {
-        private DecisionTree _decisionTree = new DecisionTree();
+        private DecisionTree _decisionTree = new DecisionTree()
+        {
+            Id = 1,
+            TreeNodes = "1,2,3,4"
+        };
 
         public DecisionTreeBuilder Id(int id)
         {

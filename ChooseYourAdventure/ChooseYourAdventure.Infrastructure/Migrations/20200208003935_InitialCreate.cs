@@ -27,6 +27,7 @@ namespace ChooseYourAdventure.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TreeNodes = table.Column<string>(nullable: false),
                     SuggestedNotes = table.Column<string>(nullable: true),
+                    CategoryName = table.Column<string>(nullable: true),
                     IsDone = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>

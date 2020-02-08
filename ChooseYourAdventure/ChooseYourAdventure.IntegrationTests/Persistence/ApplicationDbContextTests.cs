@@ -5,7 +5,6 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-// ChooseYourAdventure.Infrastructure.IntegrationTests.Persistence
 namespace ChooseYourAdventure.IntegrationTests.Persistence
 {
     public class ApplicationDbContextTests : IDisposable
@@ -18,7 +17,7 @@ namespace ChooseYourAdventure.IntegrationTests.Persistence
                 .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
 
-            _appDb = new ApplicationDbContext(options);
+            _appDb = new ApplicationDbContext(options, null);
 
             _appDb.Categories.Add(new Category
             {

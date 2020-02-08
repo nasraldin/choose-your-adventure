@@ -1,5 +1,6 @@
 ﻿using ChooseYourAdventure.Core.Entities;
 using ChooseYourAdventure.Infrastructure.Persistence;
+using ChooseYourAdventure.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -54,9 +55,26 @@ namespace ChooseYourAdventure.FunctionalTests
             },
         };
 
+        public static readonly List<DecisionTree> decisionTree = new List<DecisionTree>
+        {
+            new DecisionTree {
+                CategoryName = "Web Development",
+                TreeNodes="1,2,3"
+            },
+            new DecisionTree {
+                CategoryName = "Mobile Development" ,
+                TreeNodes="1,2,3"
+            },
+            new DecisionTree {
+                CategoryName = "Frontend" ,
+                TreeNodes="1,2,3"
+            },
+        };
+
+
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using var dbContext = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
+            using var dbContext = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>(), serviceProvider.GetRequiredService<IDomainEventDispatcher>());
 
             // Look for any items.
             if (dbContext.Categories.Any())

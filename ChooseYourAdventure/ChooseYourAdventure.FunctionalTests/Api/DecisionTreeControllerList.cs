@@ -1,8 +1,7 @@
-﻿using ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree;
+﻿using ChooseYourAdventure.Core.Entities;
+using ChooseYourAdventure.UnitTests;
 using ChooseYourAdventure.WebAPI;
-using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
@@ -19,15 +18,16 @@ namespace ChooseYourAdventure.FunctionalTests.Api
         }
 
         [Fact]
-        public async Task ReturnsTwoItems()
+        public async Task EnsureSuccessOk()
         {
             var response = await _client.GetAsync("/api/DecisionTree");
-            response.EnsureSuccessStatusCode();
-            var stringResponse = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<IEnumerable<CategoryDto>>(stringResponse).ToList();
+            Assert.True(response.EnsureSuccessStatusCode().IsSuccessStatusCode);
+        }
 
-            Assert.Equal(3, result.Count());
-            Assert.Contains(result, i => i.TreeNodes == SeedData.treeNodes);
+        [Fact]
+        public void ReturnsSameObject()
+        {
+            Assert.IsType<List<DecisionTree>>(SeedData.decisionTree);
         }
     }
 }

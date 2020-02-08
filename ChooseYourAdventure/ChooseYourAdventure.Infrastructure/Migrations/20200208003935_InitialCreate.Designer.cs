@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChooseYourAdventure.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200203204707_InitialCreate")]
+    [Migration("20200208003935_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,9 @@ namespace ChooseYourAdventure.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDone")
                         .HasColumnType("bit");
