@@ -1,6 +1,7 @@
 ﻿using ChooseYourAdventure.Core.Common.Interfaces;
-using ChooseYourAdventure.Core.Entities;
+using ChooseYourAdventure.FunctionalTests;
 using ChooseYourAdventure.Infrastructure.Persistence;
+using ChooseYourAdventure.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -31,9 +32,12 @@ namespace ChooseYourAdventure.UnitTests
                         options.UseInternalServiceProvider(serviceProvider);
                     });
 
-                    services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+                    services.AddScoped<IDomainEventDispatcher, NoOpDomainEventDispatcher>();
 
                     var sp = services.BuildServiceProvider();
+
+                    services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+
 
                     // Create a scope to obtain a reference to the database
                     using var scope = sp.CreateScope();
@@ -46,27 +50,15 @@ namespace ChooseYourAdventure.UnitTests
 
                     try
                     {
-                        SeedSampleData(context);
+                        // Seed the database with test data.
+                        SeedData.PopulateTestData(context);
                     }
                     catch (Exception ex)
                     {
-                        logger.LogError(ex, $"An error occurred seeding the database with sample data. Error: {ex.Message}.");
+                        logger.LogError(ex, "An error occurred seeding the " +
+                            $"database with test messages. Error: {ex.Message}");
                     }
-                })
-                .UseEnvironment("Test");
-        }
-
-
-        public static void SeedSampleData(ApplicationDbContext context)
-        {
-            context.Categories.AddRange(
-                new Category { Name = "Do this thing." },
-                new Category { Name = "Do this thing too." },
-                new Category { Name = "Do many, many things." },
-                new Category { Name = "This thing is done!" }
-            );
-
-            context.SaveChanges();
+                }).UseEnvironment("Test");
         }
     }
 }

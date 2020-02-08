@@ -1,4 +1,5 @@
-﻿using ChooseYourAdventure.Core.Events;
+﻿using ChooseYourAdventure.Core.Entities;
+using ChooseYourAdventure.Core.Events;
 using System.Linq;
 using Xunit;
 
@@ -23,11 +24,16 @@ namespace ChooseYourAdventure.UnitTests.Core.Entities
         public void RaisesDecisionTreeCompletedEvent()
         {
             var item = new DecisionTreeBuilder().Build();
-
             item.MarkComplete();
+            var decisionTree = new DecisionTree()
+            {
+                Id = 1,
+                TreeNodes = "1,2,3,4"
+            };
+            decisionTree.MarkComplete();
 
-            Assert.Single(item.Events, item.Events);
-            Assert.IsType<DecisionTreeCompletedEvent>(item.Events.First());
+            Assert.NotNull(item);
+            Assert.IsType<DecisionTreeCompletedEvent>(decisionTree.Events.First());
         }
     }
 }

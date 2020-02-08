@@ -43,6 +43,9 @@ namespace ChooseYourAdventure.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDone")
                         .HasColumnType("bit");
 

@@ -25,7 +25,7 @@ namespace ChooseYourAdventure.WebAPI.Common
             }
             catch (Exception ex)
             {
-                await HandleExceptionAsync(context, ex);
+                await HandleExceptionAsync(context, ex).ConfigureAwait(false);
             }
         }
 

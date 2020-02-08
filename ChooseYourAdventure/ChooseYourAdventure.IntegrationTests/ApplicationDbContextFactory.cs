@@ -12,7 +12,7 @@ namespace ChooseYourAdventure.IntegrationTests
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
 
-            var context = new ApplicationDbContext(options);
+            var context = new ApplicationDbContext(options, null);
 
             context.Database.EnsureCreated();
 
