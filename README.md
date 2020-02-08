@@ -23,10 +23,11 @@ This project use .Net Core 3.1 and Angular CLI version 8.3.21
 
 • Frontend 
 webapp folder include client app 
-Run `ng s` or `ng serve` for a dev server. Navigate to `http://localhost:4200`. 
+Run `npm run start-frontend` for a frontend dev server. Navigate to `http://localhost:4200`. 
 
 • Backend 
 ChooseYourAdventure folder include bacnkend web API server
+Build The Solution ChooseYourAdventure after that in Visual studio from Package manager console set default project to ChooseYourAdventure.Infrastructure and run `Update-Database` or you can run from cmd by `dotnet ef database update`
 Build and run solution and navigate to `http://localhost:5000`
 
 ## Running unit tests
