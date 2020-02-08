@@ -24,8 +24,10 @@
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-frontend": "ng serve --port=4200 --o --proxy-config proxy.config.json"
   },
+  "proxy": "http://localhost:5000",
   "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.14",

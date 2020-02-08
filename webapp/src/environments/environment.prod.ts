@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  production: true,
+  endpoint: {
+    category: '/api/Category',
+    decisionTree: '/api/DecisionTree',
+    decisionTreeDetails: '/api/DecisionTree/Details',
+    treeNode: '/api/TreeNode'
+  }
 };

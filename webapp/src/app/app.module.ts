@@ -12,6 +12,7 @@ import { DecisionWizardComponent } from './components/decisionTree/decision-wiza
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { ViewDecisionTreeComponent } from './components/decisionTree/view-decision-tree/view-decision-tree.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
     HeaderComponent,
     SidebarComponent,
     DecisionTreeComponent,
+    ViewDecisionTreeComponent,
     DecisionWizardComponent
   ],
   imports: [
@@ -27,7 +29,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     AppConfigService,
@@ -37,7 +39,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
       deps: [AppConfigService],
       multi: true
     },
-    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

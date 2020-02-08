@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using ChooseYourAdventure.Core.Commands.Categories.Queries.GetCategories;
-using ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree;
 using ChooseYourAdventure.Core.Common.Models;
 using ChooseYourAdventure.Core.Entities;
 using System;

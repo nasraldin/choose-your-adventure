@@ -1,9 +1,10 @@
-import { AppConfigService } from './app-config.service';
 import {
-  HttpTestingController,
-  HttpClientTestingModule
+  HttpClientTestingModule,
+  HttpTestingController
 } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
+
+import { AppConfigService } from './app-config.service';
 
 describe('Service: AppConfigService', () => {
   let httpMock: HttpTestingController;
@@ -24,13 +25,13 @@ describe('Service: AppConfigService', () => {
     }
   ));
 
-  it('should be created', inject([AppConfigService], () => {
+  it('should be initializations', inject([AppConfigService], () => {
     expect(service).toBeTruthy();
   }));
 
-  // it('load() should return value from a promise', done => {
-  //   service.load().then(value => {
-  //     expect(value).toBe({});
+  // it('load() should return value from a promise', async done => {
+  //   await service.load().then(value => {
+  //     expect(value).toBe(value);
   //     done();
   //   });
   // });

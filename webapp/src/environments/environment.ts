@@ -5,8 +5,10 @@
 export const environment = {
   production: false,
   endpoint: {
-    decisionTree: '/api/decision-tree',
-    markComplete: '/api/mark-complete'
+    category: '/api/Category',
+    decisionTree: '/api/DecisionTree',
+    decisionTreeDetails: '/api/DecisionTree/Details',
+    treeNode: '/api/TreeNode'
   }
 };
 

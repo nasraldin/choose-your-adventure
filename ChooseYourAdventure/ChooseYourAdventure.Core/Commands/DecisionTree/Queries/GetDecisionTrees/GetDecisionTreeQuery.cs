@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using ChooseYourAdventure.Core.Common.Interfaces;
 using ChooseYourAdventure.Core.Common.Models;
-using ChooseYourAdventure.Core.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
+namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTrees
 {
     public class GetDecisionTreeQuery : IRequest<List<DecisionTreeDto>>
     {
@@ -37,7 +36,7 @@ namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
                 {
                     List<string> treeNodeIds = item.TreeNodes.Split(',').ToList();
 
-                    var treeNodes = _mapper.Map<IList<TreeNodeVm>>(GetTreeNode(treeNodeIds));
+                    var treeNodes = _mapper.Map<IList<TreeNodeVm>>(TreeNodeHelper.GetTreeNode(treeNodeIds, _context));
 
                     decisionTree.Add(new DecisionTreeDto
                     {
@@ -50,20 +49,6 @@ namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
                 }
 
                 return decisionTree;
-            }
-
-            /// <summary>
-            /// return list of TreeNodes
-            /// </summary>
-            /// <param name="ids"></param>
-            /// <returns></returns>
-            public List<TreeNode> GetTreeNode(List<string> ids)
-            {
-                List<TreeNode> treeNodes = new List<TreeNode>();
-
-                ids.ForEach(x => { treeNodes.Add(_context.TreeNodes.FindAsync(int.Parse(x)).Result); });
-
-                return treeNodes;
             }
         }
     }
