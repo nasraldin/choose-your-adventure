@@ -1,8 +1,7 @@
 ﻿using ChooseYourAdventure.Core.Common.Mappings;
-using ChooseYourAdventure.Core.Common.Models;
 using System.Collections.Generic;
 
-namespace ChooseYourAdventure.Core.Commands.DecisionTree.Queries.GetDecisionTree
+namespace ChooseYourAdventure.Core.Common.Models
 {
     public class DecisionTreeDto : IMapFrom<Entities.DecisionTree>
     {

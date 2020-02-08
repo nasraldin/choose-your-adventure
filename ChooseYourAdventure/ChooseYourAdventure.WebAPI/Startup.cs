@@ -31,9 +31,10 @@ namespace ChooseYourAdventure.WebAPI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddControllers().AddNewtonsoftJson();
+
             services.AddSwaggerGen(sw => sw.SwaggerDoc("v1",
                 new OpenApiInfo { Title = "Choose Your Adventure API", Version = "v1" }));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
