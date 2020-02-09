@@ -1,6 +1,6 @@
 ﻿using ChooseYourAdventure.Core.Commands.TreeNodes.CreateTreeNode;
 using ChooseYourAdventure.Core.Commands.TreeNodes.Queries.GetTreeNodes;
-using ChooseYourAdventure.Core.Common.Models;
+using ChooseYourAdventure.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,10 +15,10 @@ namespace ChooseYourAdventure.WebAPI.Controllers
             return await Mediator.Send(command).ConfigureAwait(false);
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<TreeNodeVm>>> Get()
+        [HttpPost("GetByCategoryId")]
+        public async Task<ActionResult<List<TreeNode>>> GetByCategoryId([FromBody]GetTreeNodesQuery query)
         {
-            return await Mediator.Send(new GetTreeNodesQuery()).ConfigureAwait(false);
+            return await Mediator.Send(query).ConfigureAwait(false);
         }
     }
 }

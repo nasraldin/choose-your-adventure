@@ -9,9 +9,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { DecisionTreeComponent } from './components/decisionTree/index/index.component';
 import { DecisionWizardComponent } from './components/decisionTree/decision-wizard/decision-wizard.component';
+import { FormWizardModule } from 'angular2-wizard';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { TreeWizardComponent } from './components/decisionTree/decision-wizard/tree-wizard/tree-wizard.component';
 import { ViewDecisionTreeComponent } from './components/decisionTree/view-decision-tree/view-decision-tree.component';
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ViewDecisionTreeComponent } from './components/decisionTree/view-decisi
     SidebarComponent,
     DecisionTreeComponent,
     ViewDecisionTreeComponent,
-    DecisionWizardComponent
+    DecisionWizardComponent,
+    TreeWizardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ViewDecisionTreeComponent } from './components/decisionTree/view-decisi
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormWizardModule
   ],
   providers: [
     AppConfigService,

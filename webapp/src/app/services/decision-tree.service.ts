@@ -1,4 +1,5 @@
 import { DecisionTree } from '../models/decision-tree.model';
+import { DecisionTreeFormSubmission } from './../models/decision-tree.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -18,5 +19,9 @@ export class DecisionTreeService {
 
   getDetails(query: SearchModel): Observable<DecisionTree> {
     return this.http.post<DecisionTree>(this.detailsUrl, query);
+  }
+
+  save(submisssion: DecisionTreeFormSubmission): Observable<DecisionTreeFormSubmission> {
+    return this.http.post<DecisionTreeFormSubmission>(this.baseUrl, submisssion);
   }
 }

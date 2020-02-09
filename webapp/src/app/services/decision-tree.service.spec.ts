@@ -47,9 +47,9 @@ describe('Service: DecisionTreeService', () => {
         isDone: true
       }
     ];
-    service.getDecisionTree().subscribe(categories => {
-      expect(categories).toEqual(expect.arrayContaining(expected));
-      expect(categories[0][0]).toBe('DecisionTree');
+    service.getDecisionTree().subscribe(decisionTree => {
+      expect(decisionTree).toEqual(expect.arrayContaining(expected));
+      expect(decisionTree[0][0]).toBe('DecisionTree');
     });
 
     const req = httpMock.expectOne('/api/DecisionTree');
