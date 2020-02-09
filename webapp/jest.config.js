@@ -38,12 +38,12 @@ module.exports = {
   collectCoverage: true,
   coverageReporters: ['text-summary', 'json', 'lcov', 'text', 'clover'],
   coverageDirectory: 'coverage/app',
-  coverageThreshold: {
-    global: {
-      branches: 50,
-      functions: 50,
-      lines: 50,
-      statements: 50
-    }
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 50,
+  //     functions: 50,
+  //     lines: 50,
+  //     statements: 50
+  //   }
+  // },
 };

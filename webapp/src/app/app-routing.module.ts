@@ -8,7 +8,7 @@ import { ViewDecisionTreeComponent } from './components/decisionTree/view-decisi
 const routes: Routes = [
   { path: '', component: DecisionTreeComponent },
   { path: 'decision-tree/:id', component: ViewDecisionTreeComponent },
-  { path: 'decision-tree', component: DecisionWizardComponent }
+  { path: 'decision-wizard', component: DecisionWizardComponent }
 ];
 
 @NgModule({

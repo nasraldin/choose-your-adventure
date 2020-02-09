@@ -8,7 +8,8 @@ export const environment = {
     category: '/api/Category',
     decisionTree: '/api/DecisionTree',
     decisionTreeDetails: '/api/DecisionTree/Details',
-    treeNode: '/api/TreeNode'
+    treeNode: '/api/TreeNode',
+    getByCategoryId: '/api/TreeNode/GetByCategoryId'
   }
 };
 

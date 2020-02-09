@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace ChooseYourAdventure.WebAPI
 {
@@ -31,7 +33,12 @@ namespace ChooseYourAdventure.WebAPI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                // Use the default property (Pascal) casing
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
             services.AddSwaggerGen(sw => sw.SwaggerDoc("v1",
                 new OpenApiInfo { Title = "Choose Your Adventure API", Version = "v1" }));

@@ -30,8 +30,8 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
                     {
                         new Category { Name = "Web Development" },
                         new Category { Name = "Mobile Development" },
-                        new Category { Name = "Frontend" },
-                        new Category { Name = "Backend" },
+                        new Category { Name = "Desktop Development" },
+                        new Category { Name = "Embedded System" },
                     };
 
                 _context.Categories.AddRange(categories);
@@ -44,35 +44,46 @@ namespace ChooseYourAdventure.Infrastructure.Persistence
                     {
                         new TreeNode
                         {
-                            Question = "Web Development Question 1",
+                            Question = "Have you familiar with web development?",
                             CategoryId = 1
                         },
                         new TreeNode
                         {
-                            Question = "Web Development Question 2",
+                            Question = "Do you know JavaScript?",
                             CategoryId = 1
                         },
                         new TreeNode
                         {
-                            Question = "Web Development Answare Question 1",
+                            Question = "Do you know HTML5 SASS?",
+                            CategoryId = 1
+                        },
+
+                        new TreeNode
+                        {
+                            Question = "Have you familiar with Mobile development?",
+                            CategoryId = 2,
+                        },
+                        new TreeNode
+                        {
+                            Question = "Do you know kotlin?",
+                            CategoryId = 2,
+                        },
+                        new TreeNode
+                        {
+                            Question = "Do you know Flutter?",
+                            CategoryId = 2
+                        },
+                        new TreeNode
+                        {
+                            Question = "JavaScript is the best?",
                             CategoryId = 1,
-                            ParentId = 1
+                            ParentId = 2
                         },
                         new TreeNode
                         {
-                            Question = "Web Development Question Answare Question 3",
+                            Question = "Familiar with input types in HTML5?",
                             CategoryId = 1,
                             ParentId = 3
-                        },
-                        new TreeNode
-                        {
-                            Question = "Web Development Question 5",
-                            CategoryId = 2
-                        },
-                        new TreeNode
-                        {
-                            Question = "Web Development Question 6",
-                            CategoryId = 2
                         },
                     };
 

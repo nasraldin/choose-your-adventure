@@ -1,21 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { DecisionWizardComponent } from './decision-wizard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TreeWizardComponent } from './tree-wizard.component';
 
-describe('DecisionWizardComponent', () => {
+describe('TreeWizardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientModule],
-      declarations: [DecisionWizardComponent],
+      declarations: [TreeWizardComponent],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
   it('should create the Header', () => {
-    const fixture = TestBed.createComponent(DecisionWizardComponent);
+    const fixture = TestBed.createComponent(TreeWizardComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });

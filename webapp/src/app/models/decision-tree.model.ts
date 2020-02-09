@@ -7,3 +7,9 @@ export interface DecisionTree {
   categoryName: string;
   isDone: boolean;
 }
+
+export class DecisionTreeFormSubmission {
+  treeNodes: string;
+  suggestedNotes: string;
+  categoryName: string;
+}
