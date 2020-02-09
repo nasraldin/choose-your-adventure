@@ -13,11 +13,11 @@ This project use .Net Core 3.1 and Angular CLI version 8.3.21
 
 ## Project spec
 
-• Clean Architecture
-• Repository Pattern
-• Unit of Work
-• Seeding initial data by using Code First approach
-• Logging and Exception Handling
+- Clean Architecture
+- Repository Pattern
+- Unit of Work
+- Seeding initial data by using Code First approach
+- Logging and Exception Handling
 
 ## Development server
 
