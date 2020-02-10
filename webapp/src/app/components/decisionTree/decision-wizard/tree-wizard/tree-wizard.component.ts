@@ -35,7 +35,7 @@ export class TreeWizardComponent implements OnInit {
 
   onComplete() {
     console.log('onComplete');
-    this.decisionTree.categoryName = this.categoryName;
+    this.decisionTree.categoryName = '';
     this.decisionTree.suggestedNotes = 'Suggested Notes 1233654';
     this.decisionTree.treeNodes = this.treeNodes.join(',');
 
