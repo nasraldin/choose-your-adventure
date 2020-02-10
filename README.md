@@ -7,7 +7,7 @@ This project use .Net Core 3.1 and Angular CLI version 8.3.21
 - ASP.Net Core 3.1
 - Entity Framework Core
 - SQL Server
-- Xunit, Moq
+- Xunit
 - Angular 8
 - Jest
 
