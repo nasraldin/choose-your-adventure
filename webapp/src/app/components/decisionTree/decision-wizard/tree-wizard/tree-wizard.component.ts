@@ -39,7 +39,7 @@ export class TreeWizardComponent implements OnInit {
     this.decisionTree.suggestedNotes = 'Suggested Notes 1233654';
     this.decisionTree.treeNodes = this.treeNodes.join(',');
 
-    if (this.decisionTree && this.treeNodes && this.decisionTree.categoryName) {
+    if (this.decisionTree && this.treeNodes) {
       this.service.save(this.decisionTree).subscribe(
         response => {
           if (response && response !== undefined) {
